@@ -1,7 +1,9 @@
 import { StringMap } from "@angular/compiler/src/compiler_facade_interface";
 import { getPriority } from "os";
 
-export class TodoClass { // public e di defaoult sia con le variabile che con funzioni, private  li puo usare solo quella proprieta tipo todo,readonly posso cambiarla solo una volta  si usa per le date  si puo solo leggere?
+export class TodoClass { 
+    
+    // public e di defaoult sia con le variabile che con funzioni, private  li puo usare solo quella proprieta tipo todo,readonly posso cambiarla solo una volta  si usa per le date  si puo solo leggere?
  
 
     public name: string;
@@ -13,7 +15,7 @@ export class TodoClass { // public e di defaoult sia con le variabile che con fu
     constructor(name: string, tags: string[] = [], creationDate: Date = new Date(), priority: TodoPriority = TodoPriority.LOW){ // si riporta la roba vecchia da javascrip todo app
         this.name = name;
         this.tags = tags;
-        this._creationDate = creationDate;
+        this._creationDate = creationDate.getTime();
         this.priority = priority;
     }
     get creationDate(): Date {
